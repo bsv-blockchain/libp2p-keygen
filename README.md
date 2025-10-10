@@ -21,34 +21,34 @@ Download the latest release from [GitHub Releases](https://github.com/bsv-blockc
 
 **macOS (Apple Silicon):**
 ```bash
-curl -LO https://github.com/bsv-blockchain/libp2p-keygen/releases/latest/download/libp2p-keygen-darwin-arm64
-chmod +x libp2p-keygen-darwin-arm64
-sudo mv libp2p-keygen-darwin-arm64 /usr/local/bin/libp2p-keygen
+curl -L https://github.com/bsv-blockchain/libp2p-keygen/releases/latest/download/libp2p-keygen-darwin-arm64 -o libp2p-keygen
+chmod +x libp2p-keygen
+./libp2p-keygen --version
 ```
 
 **macOS (Intel):**
 ```bash
-curl -LO https://github.com/bsv-blockchain/libp2p-keygen/releases/latest/download/libp2p-keygen-darwin-amd64
-chmod +x libp2p-keygen-darwin-amd64
-sudo mv libp2p-keygen-darwin-amd64 /usr/local/bin/libp2p-keygen
+curl -L https://github.com/bsv-blockchain/libp2p-keygen/releases/latest/download/libp2p-keygen-darwin-amd64 -o libp2p-keygen
+chmod +x libp2p-keygen
+./libp2p-keygen --version
 ```
 
 **Linux (amd64):**
 ```bash
-curl -LO https://github.com/bsv-blockchain/libp2p-keygen/releases/latest/download/libp2p-keygen-linux-amd64
-chmod +x libp2p-keygen-linux-amd64
-sudo mv libp2p-keygen-linux-amd64 /usr/local/bin/libp2p-keygen
+curl -L https://github.com/bsv-blockchain/libp2p-keygen/releases/latest/download/libp2p-keygen-linux-amd64 -o libp2p-keygen
+chmod +x libp2p-keygen
+./libp2p-keygen --version
 ```
 
 **Linux (arm64):**
 ```bash
-curl -LO https://github.com/bsv-blockchain/libp2p-keygen/releases/latest/download/libp2p-keygen-linux-arm64
-chmod +x libp2p-keygen-linux-arm64
-sudo mv libp2p-keygen-linux-arm64 /usr/local/bin/libp2p-keygen
+curl -L https://github.com/bsv-blockchain/libp2p-keygen/releases/latest/download/libp2p-keygen-linux-arm64 -o libp2p-keygen
+chmod +x libp2p-keygen
+./libp2p-keygen --version
 ```
 
 **Windows (amd64):**
-Download `libp2p-keygen-windows-amd64.exe` from the [releases page](https://github.com/bsv-blockchain/libp2p-keygen/releases).
+Download `libp2p-keygen-windows-amd64.exe` from the [releases page](https://github.com/bsv-blockchain/libp2p-keygen/releases) and rename to `libp2p-keygen.exe`.
 
 ### Build From Source
 
@@ -79,7 +79,7 @@ Binaries will be available in the `bin/` directory.
 Generate a single Ed25519 key pair:
 
 ```bash
-libp2p-keygen
+./libp2p-keygen
 ```
 
 Output:
@@ -100,13 +100,13 @@ Generate a key with a specific pattern in the peer ID:
 
 ```bash
 # Case-insensitive search (default)
-libp2p-keygen --vanity cool
+./libp2p-keygen --vanity cool
 
 # Case-sensitive search
-libp2p-keygen --vanity Cool --case-sensitive
+./libp2p-keygen --vanity Cool --case-sensitive
 
 # With verbose output
-libp2p-keygen --vanity bitcoin --verbose
+./libp2p-keygen --vanity bitcoin --verbose
 ```
 
 Example output:
@@ -143,19 +143,19 @@ Flags:
 
 ```bash
 # Simple generation
-libp2p-keygen
+./libp2p-keygen
 
 # Find a peer ID containing "bsv"
-libp2p-keygen --vanity bsv
+./libp2p-keygen --vanity bsv
 
 # Find a peer ID with exact case "BSV"
-libp2p-keygen --vanity BSV --case-sensitive
+./libp2p-keygen --vanity BSV --case-sensitive
 
 # Generate with custom port display
-libp2p-keygen --port 8080
+./libp2p-keygen --port 8080
 
 # Show version
-libp2p-keygen --version
+./libp2p-keygen --version
 ```
 
 ## Understanding Vanity Generation
